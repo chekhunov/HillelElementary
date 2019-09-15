@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+    <New id="jdbc/homelibrary" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jdbc/homelibrary</Arg>
+        <Arg>
+            <New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+                <Set name="driverClass">com.mysql.cj.jdbc.Driver</Set>
+                <Set name="jdbcUrl">jdbc:mysql://localhost:3306/homelibrary?useSSL=false</Set>
+                <Set name="user">root</Set>
+                <Set name="password">12345678</Set>
+            </New>
+        </Arg>
+    </New>
+</Configure>
